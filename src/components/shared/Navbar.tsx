@@ -22,17 +22,17 @@ const Navbar = () => {
           </div>
 
           {/* Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-5">
             <a
               href="#"
-              className="text-white text-sm font-medium rounded-[15px] px-2 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
+              className="text-white text-sm font-medium rounded-[15px] px-3 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
             >
               Workouts
             </a>
 
             <a
               href="#"
-              className="text-white text-sm font-medium rounded-[15px] px-2 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
+              className="text-white text-sm font-medium rounded-[15px] px-3 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
             >
               My Plan
             </a>
