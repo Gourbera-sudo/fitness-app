@@ -3,7 +3,7 @@ import bannerImg from "@/assets/banner.png";
 
 const Banner = () => {
   return (
-    <section className="bg-[#0B0D10] py-6 sm:py-8 lg:py-10">
+    <section className="bg-[#0B0D10] py-6 sm:py-8 lg:py-10 space-x-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-lg bg-[#15171B] min-h-[500px] sm:min-h-[420px] lg:min-h-[360px]">
           <div

@@ -1,20 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#0B0D10] border-b border-[#1C1F24]">
+    <nav className=" bg-[#0B0D10] border-b border-[#1C1F24] space-x-6">
       <div className="container mx-auto px-6">
         <div className="h-[72px] flex items-center justify-between">
-
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <Image
-              src={logo}
-              width={30}
-              height={30}
-              alt="Fitlog Logo"
-            />
+            <Image src={logo} width={30} height={30} alt="Fitlog Logo" />
 
             <span className="text-white text-[20px] font-black tracking-wide">
               FITLOG
@@ -23,32 +18,31 @@ const Navbar = () => {
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-5">
-            <a
-              href="#"
+            <Link
+              href="/myPlan"
               className="text-white text-sm font-medium rounded-[15px] px-3 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
             >
               Workouts
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="/myPlan"
               className="text-white text-sm font-medium rounded-[15px] px-3 py-1 hover:text-[#B6FF00] transition bg-[#1A2312]"
             >
               My Plan
-            </a>
+            </Link>
           </div>
 
           {/* Right Buttons */}
           <div className="flex items-center gap-3">
-            <button className="px-5 py-2 rounded-md border border-[#2A2D32] text-white text-sm hover:border-[#B6FF00] hover:text-[#B6FF00] transition">
+            <Link href="/myPlan" className="px-5 py-2 rounded-md border border-[#2A2D32] text-white text-sm hover:border-[#B6FF00] hover:text-[#B6FF00] transition">
               Plan
-            </button>
+            </Link>
 
-            <button className="px-5 py-2 rounded-md bg-[#B6FF00] text-black text-sm font-semibold hover:bg-[#C5FF33] transition">
+            <Link href="/myPlan" className="px-5 py-2 rounded-md bg-[#B6FF00] text-black text-sm font-semibold hover:bg-[#C5FF33] transition">
               Saved
-            </button>
+            </Link>
           </div>
-
         </div>
       </div>
     </nav>
