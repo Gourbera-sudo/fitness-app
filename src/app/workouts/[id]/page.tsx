@@ -1,14 +1,14 @@
 import { IData } from "@/types/type";
 import Image from "next/image";
 import WorkoutActions from "@/components/WorkoutActions";
-
+import cardImage from "@/assets/cardImage.png";
 interface PageProps {
   params: Promise<{
     id: string;
   }>;
 }
 
-// Get all workouts and find the selected workout
+
 const getWorkout = async (id: string): Promise<IData | undefined> => {
   const res = await fetch(
     "https://api.abcz.workers.dev/api/fitlog",
@@ -33,7 +33,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
 
   const workout = await getWorkout(id);
 
-  // Workout not found
+  
   if (!workout) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#0B0D10] px-4">
@@ -55,10 +55,10 @@ const WorkoutDetails = async ({ params }: PageProps) => {
       <section className="container mx-auto px-4 py-8 sm:px-6 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
 
-          {/* ================= IMAGE ================= */}
+          
           <div className="relative h-[420px] overflow-hidden rounded-xl sm:h-[520px] lg:h-[645px]">
             <Image
-              src={workout.image}
+              src={cardImage}
               alt={workout.name}
               fill
               priority
@@ -66,20 +66,20 @@ const WorkoutDetails = async ({ params }: PageProps) => {
             />
           </div>
 
-          {/* ================= CONTENT ================= */}
+          
           <div className="flex flex-col">
 
-            {/* TITLE */}
+            
             <h1 className="text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
               {workout.name}
             </h1>
 
-            {/* DESCRIPTION */}
+            
             <p className="mt-5 text-base leading-6 text-gray-400">
               {workout.description}
             </p>
 
-            {/* MUSCLE GROUPS */}
+            
             <div className="mt-5 flex flex-wrap gap-3">
               {workout.muscleGroups.map((muscle) => (
                 <span
@@ -91,10 +91,10 @@ const WorkoutDetails = async ({ params }: PageProps) => {
               ))}
             </div>
 
-            {/* ================= STATS ================= */}
+           
             <div className="mt-6 overflow-hidden rounded-2xl border border-[#242832] bg-[#15171B]">
 
-              {/* EQUIPMENT */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Equipment
@@ -105,7 +105,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* DIFFICULTY */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Difficulty
@@ -116,7 +116,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* SETS */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Sets
@@ -127,7 +127,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* REPS */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Reps
@@ -138,7 +138,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* DURATION */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Duration
@@ -149,7 +149,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* CALORIES */}
+              
               <div className="flex items-center justify-between border-b border-[#242832] px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Calories
@@ -160,7 +160,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
                 </span>
               </div>
 
-              {/* RATING */}
+              
               <div className="flex items-center justify-between px-5 py-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   Rating
@@ -172,7 +172,7 @@ const WorkoutDetails = async ({ params }: PageProps) => {
               </div>
             </div>
 
-            {/* ================= INSTRUCTIONS ================= */}
+            
             <div className="mt-7">
               <h2 className="text-lg font-extrabold uppercase tracking-wide">
                 Instructions
@@ -196,8 +196,8 @@ const WorkoutDetails = async ({ params }: PageProps) => {
               </ol>
             </div>
 
-            {/* ================= BUTTONS ================= */}
-            <WorkoutActions workout={workout} />
+         
+            <WorkoutActions info={workout} />
 
           </div>
         </div>
